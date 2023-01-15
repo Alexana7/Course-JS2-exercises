@@ -161,10 +161,113 @@
 
 // ex.4.5
 
-const hero = { 
-    nick: "FirstHero", 
-    position: "Лагерь",
-    getPosition: function getPosition(){
-        console.log("Позиция героя: " + this.position)
-    }   
-}
+// const hero = { 
+//     nick: "FirstHero", 
+//     position: "Лагерь",
+//     getPosition: function getPosition(){
+//         console.log("Позиция героя: " + this.position)
+//     }   
+// }
+
+// ex.5.1 Объявите переменную descriptor, которая должна содержать значения всех атрибутов ключа totalPrice объекта orders в виде объекта. Результат выведите в консоль.
+
+// const order = {
+//     productName: "Велосипед",
+//     costomerName: "Саша",
+//     salesName: "Петя",
+//     totalPrice: 15000
+// }
+
+// const descriptor = Object.getOwnPropertyDescriptor(order,'totalPrice');
+// console.log(descriptor)
+
+// ex.5.2  Сформируйте строку с именами всех свойств через запятую и пробел (, ) и выведите в консоль. Имена методов добавляться не должны.
+
+// const employees = {
+//     firstName: "Петя",
+//     lastName: "Иванов",
+//     ratePerDay: 2500,
+//     workingDays: 5,
+//     getSalary() { console.log(employees.ratePerDay * employees.workingDays )} 
+// }
+// function getKeys(obj) {
+//     let res = '';
+//     for (key in obj) {
+//         if (typeof obj[key] !== 'function') { //проверка является ли метод функцией
+//             res += `${key}, `                 // формируем строку с элементами чере                                 запятую и пробел
+//         } else {
+//             res;
+//         }   
+//     }
+//     res = res.slice(0, res.length - 2); // убираем запятую и пробел у последнего  элемента строки
+//     return res;   
+// }
+// res = getKeys(employees)
+// console.log(res)
+
+// ex.5.3 В программе объявлены переменные firstName и lastName. Создайте объект user со свойствами firstName и lastName и добавьте getter и setter fullName. Сеттер fullName должен принимать имя и фамилию пользователя через пробел, разделять и присваивать свойствам firstName и lastName соответственно. Геттер fullName должен формировать строку, состоящую из имени и фамилии через пробел.
+
+// const firstName = "Александр";
+// const lastName = "Петров";
+
+// class User {
+//     constructor (a,b) {
+//         this.firstName = a;
+//         this.lastName = b;
+//     }
+//     set fullName(str) {
+//         let data = str.split(" ");
+//         this.firstName = data[0];
+//         this.lastName = data[1];
+//     }
+//     get fullName() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
+// let user = new User(firstName, lastName);
+// console.log(user.fullName);
+
+// 5.4 В программе объявлены переменные name и phone, которые хранят строки. В name указано название заведения, а в phone — его номер телефона. Создайте класс Delivery со свойствами name и phone. Помимо описанных свойств, добавьте свойство validPhone, которое проверяет значение свойства phone на вхождение знака + в начале строки. Если знак отсутствует, свойство validPhone должно принять булевое значение false, в противном случае — true. Создайте экземпляр класса Delivery и в качестве аргументов конструктора укажите значения переменных name и phone. Получившийся экземпляр класса запишите в переменную deliveryName.
+
+// let name = "Pizza";
+// let phone = "81234567890";
+
+// class Delivery {
+//     constructor(name, phone) {
+//         this.name = name;
+//         this.phone = phone;
+//         this.validPhone = /^\+/.test(phone)
+//     }       
+// }
+// let deliveryName = new Delivery(name, phone);
+// console.log(deliveryName.validPhone);
+
+// ex.5.5 В программе создан класс Permissions, свойства которого описывают права пользователей на редактирование статей на сайте. Создайте новый класс User, который наследуется от класса Permissions. Дополнительно в классе User добавьте свойство name, значение которого класс принимает в качестве аргумента конструктора.
+// class Permissions {
+//     constructor() {
+//         this.create = false
+//         this.read = true
+//         this.update = false
+//         this.remove = false
+//     }
+// }
+// class User extends Permissions {
+//     constructor(name) {
+//         super ();
+//         this.name = name;
+//     }
+// }
+
+// ex.5.6 В программе задан массив array, элементы которого имеют численное значение, и переменная num, которая является числом. Реализуйте функцию queue(num, ...array), которая принимает в качестве аргументов множество значений списка array и значение переменной num. Функция должна найти минимальную сумму num элементов из значений массива array. Ответ выведите в консоль.
+
+// const array = [2, 4, 7, 8, 1];
+// const num = 2;
+// function queue (num, ...array) {
+//   array.sort((a, b) => a - b);
+//   let res = 0;
+//   num !== 0 ? res = array.slice(0, num).reduce((acc, val) => acc+ val) : res = 0; 
+//  console.log(res) 
+// }
+// queue (num, ...array)
+
+
