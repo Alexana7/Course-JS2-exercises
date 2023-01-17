@@ -233,16 +233,62 @@
 
 //ex.2.16
 //В программе заданы два массива array_1 и array_2, элементы которого являются числами. Значения внутри одного массива уникальные. Реализуйте функцию intersection, которая принимает в качестве аргументов два массива и возвращает новый массив. Он должен содержать значения, которые встречаются в обоих массивах-аргументах, и быть отсортирован по убыванию.
-let array_1 = [2, 4, 7, 8, 1];
-let array_2 = [2, 5, 11, 6, 1];
+// let array_1 = [2, 4, 7, 8, 1];
+// let array_2 = [2, 5, 11, 6, 1];
 
-function intersection(array_1, array_2) {
-    let res = array_1.filter(el => {
-      return array_2.includes(el);
-    });
-    res = res.sort((a, b) => b - a);
-    return res;
+// function intersection(array_1, array_2) {
+//     let res = array_1.filter(el => {
+//       return array_2.includes(el);
+//     });
+//     res = res.sort((a, b) => b - a);
+//     return res;
+// }
+// console.log(intersection(array_1, array_2))
+
+
+
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained. // 'ehT gib elppa'
+// let str = "The big apple"
+// function reverseWords(str) {
+//   str = str.split(" ").map(e => e.split('').reverse().join(''));
+//   return str.join(" ")
+// }
+// reverseWords(str)
+// console.log(reverseWords(str))
+let str = "the_stealth_warrior"
+let str1 = ""
+// function toCamelCase(str){
+//   if (str !== '') {
+
+//     if (str !== str.toLowerCase()) {
+//       str = capitalize(str);
+//       return str.join('')
+
+      
+//     } else {
+//       str = capitalize(str)
+//       return str[0].toLowerCase() + str.slice(1).join('');
+
+//     }
+    
+//   } else {
+//     return str
+//   }
+// }
+
+// function capitalize(str) {
+//   return str.split(/[_\-]+/g).map(e => (e[0].toUpperCase() + e.slice(1)));
+// }
+// toCamelCase(str1)
+// console.log(toCamelCase(str1))
+
+
+
+function toCamelCase(str){
+  var regExp=/[-_]\w/ig;
+  return str.replace(regExp,function(match){
+        return match.charAt(1).toUpperCase();
+   });
 }
-console.log(intersection(array_1, array_2))
-
-
+let result = toCamelCase(str);
+console.log(result)
